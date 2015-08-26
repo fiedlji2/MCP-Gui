@@ -8,6 +8,18 @@ function packetHandler( data, address )
             telType=data(1+i*5-4);
             telVal=serial.data2float(data((1+i*5-3):(1+i*5)));
             lines(telType).YData=[lines(telType).YData(2:end) telVal];
+            
+            %HawkEye Lines update
+            switch telType
+                case constants.telemetries('ELEVATOR_POSITION')
+                    set(findobj('DisplayName',MAV.Title,'tag','POS'),'yData',telVal);
+                case constants.telemetries('AILERON_POSITION')
+                    set(findobj('DisplayName',MAV.Title,'tag','POS'),'xData',telVal);
+                case constants.telemetries('ELEVATOR_POS_SETPOINT')
+                    set(findobj('DisplayName',MAV.Title,'tag','SET'),'yData',telVal);
+                case constants.telemetries('AILERON_POS_SETPOINT')
+                    set(findobj('DisplayName',MAV.Title,'tag','SET'),'xData',telVal);
+            end        
         end       
     %REPORTS
     elseif data(1)==114

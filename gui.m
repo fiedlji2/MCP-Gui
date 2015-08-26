@@ -10,10 +10,11 @@ figHndl = figure('pos',[(dispSize(3)-figSize(1))/2 (dispSize(4)-figSize(2))/2  f
 
 %tabs
 MAVTabGroup = uitabgroup();
-MAVTab = uitab(MAVTabGroup,'Title','MAV 1','Backgroundcolor',[0.1 0.91 0.1],'UserData',constants.address('K1'));
-MAVTab = [MAVTab uitab(MAVTabGroup,'Title','MAV 2','Backgroundcolor',[0.1 0.85 1],'UserData',constants.address('K2'))];
-MAVTab = [MAVTab uitab(MAVTabGroup,'Title','MAV 3','Backgroundcolor',[1 0.3 0.1],'UserData',constants.address('K3'))];
+MAVTab = uitab(MAVTabGroup,'Title','MAV 1','Backgroundcolor','r','UserData',constants.address('K1'));
+MAVTab = [MAVTab uitab(MAVTabGroup,'Title','MAV 2','Backgroundcolor','b','UserData',constants.address('K2'))];
+MAVTab = [MAVTab uitab(MAVTabGroup,'Title','MAV 3','Backgroundcolor','k','UserData',constants.address('K3'))];
 MAVTab = [MAVTab uitab(MAVTabGroup,'Title','MAV 4','Backgroundcolor',[1 0.5 1],'UserData',constants.address('KC1'))];
+HkEyeTab = uitab(MAVTabGroup,'Title','Hawk Eye');
 
 %left panel
 gui.setTelemetry(MAVTab(1));
@@ -32,6 +33,9 @@ gui.setAxes(MAVTab(1));
 gui.setAxes(MAVTab(2));
 gui.setAxes(MAVTab(3));
 gui.setAxes(MAVTab(4));
+
+
+gui.setHawkEye(HkEyeTab);
 
 %%SERIAL LINK
 %instrfind
