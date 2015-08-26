@@ -37,7 +37,7 @@ gui.setAxes(MAVTab(4));
 %instrfind
 %   fclose(instrfind);
 % global COM;
-% COM = serial('COM4');
+% COM = serial('COM3');
 % set(COM,'BaudRate',115200);
 % fopen(COM);
 % 
