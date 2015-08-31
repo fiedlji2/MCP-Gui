@@ -13,7 +13,7 @@ MAVTabGroup = uitabgroup();
 MAVTab = uitab(MAVTabGroup,'Title','MAV 1','Backgroundcolor','r','UserData',constants.address('K1'));
 MAVTab = [MAVTab uitab(MAVTabGroup,'Title','MAV 2','Backgroundcolor','b','UserData',constants.address('K2'))];
 MAVTab = [MAVTab uitab(MAVTabGroup,'Title','MAV 3','Backgroundcolor','k','UserData',constants.address('K3'))];
-MAVTab = [MAVTab uitab(MAVTabGroup,'Title','MAV 4','Backgroundcolor',[1 0.5 1],'UserData',constants.address('KC1'))];
+MAVTab = [MAVTab uitab(MAVTabGroup,'Title','MAV 4','Backgroundcolor',[1 0.5 1],'UserData',constants.address('K4'))];
 HkEyeTab = uitab(MAVTabGroup,'Title','Hawk Eye');
 
 %left panel
